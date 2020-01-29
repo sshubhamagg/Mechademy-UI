@@ -1,19 +1,23 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3 mx-auto my-5" *ngFor="let block of blocks">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="col-md-9 col-sm-9 col-lg-9 col-xl-9 mx-auto my-3" *ngFor="let block of blocks">
+      <div class="card">
+        <img  src="../../assets/images/icon_card_top.png" alt="Card image cap" height="50" width="50" >
         <div class="card-body">
           <h5 class="card-title">{{block.data}}</h5>
-          <p class="card-text">
-              Block Index:{{block.index}}<br>
-              Previous Hash:{{block.previousHash}}<br>
-              Time Stamp:{{block.timestamp}}<br>
-              Block Hash:{{block.hash}}<br>
-              Nonce:{{block.nonce}}<br>
-            </p>
-          
+          <div class="card-text">
+
+            Previous Hash: {{block.previousHash}}<br>
+
+            <p class="hash"> Block Hash: {{block.hash}} </p>
+
+          </div>
         </div>
-      </div>
+      </div>  
+
+      <div class="image-arrow">
+        <img  src="../../assets/images/down_arrow_icon.png" height="42" width="42" alt="Block link">
+    </div>
+    </div>
   </div>
 </div>
