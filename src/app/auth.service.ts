@@ -48,6 +48,8 @@ export class AuthService {
     return this.http.post<any>(url, data,this.httpOptions)
   }
   getChain(userName) {
+    console.log(this.httpOptions);
+    
     const url = `http://localhost:3000/mechademy/blockchain/username/${userName}`
     return this.http.get<any>(url,this.httpOptions)
   }

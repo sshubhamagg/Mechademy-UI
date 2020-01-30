@@ -7,8 +7,7 @@
   body {
     font-family: Arial, Helvetica, sans-serif;
   }
-  
-  
+
   .column {
     float: left;
     width: 25%;
@@ -25,15 +24,20 @@
     clear: both;
   }
   
-  .card-title{
-      font-size: 40px;
-  }
+
+  .card-text{
+    font-size: 14px;
+}
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
     padding: 16px;
     text-align: center;
     background-color: #f1f1f1;
-    height: 250px;
+    
+  }
+
+  .card:hover {
+    transform: translateY(-15px) scale(1.025)
   }
   
   /* Responsive columns - one column layout (vertical) on small screens */
@@ -46,10 +50,22 @@
   }
 
   .hash{
-    color: blue;
+    color: #52c41a;
   }
 
   .image-arrow{
       text-align: center;
       margin-top: 35px;
   }
+
+
+input{
+  background-color: #f6ffed;
+	border:2px solid #b7eb8f  ;
+	border-radius:5px;
+	height: 22px;
+  width: 230px; 
+  text-indent: 3%;
+  color: #52c41a;
+
+}
