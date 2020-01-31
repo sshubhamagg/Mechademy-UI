@@ -11,6 +11,7 @@ export class AuthService {
       'token': this.getToken()
     })
   };
+   
   constructor(private http: HttpClient,
               private _router: Router) { }
 
@@ -19,14 +20,16 @@ export class AuthService {
     return this.http.post<any>(url, user)
   }
 
-  loginUser(user) {
-    const url=`http://localhost:3000/mechademy/login/userName/${user.userName}/password/${user.password}`
+  loginUser(userName: string , password : string) {
+    const url=`http://localhost:3000/mechademy/login/userName/${userName}/password/${password}`
+    console.log(url,'test 2');
+    
     return this.http.get<any>(url)
   }
 
   logoutUser() {
     localStorage.removeItem('token')
-    this._router.navigate(['/events'])
+    this._router.navigate(['/login'])
   }
 
   getToken() {
@@ -41,16 +44,29 @@ export class AuthService {
   loggedIn() {
     return !!localStorage.getItem('token')    
   }
+  createHeader() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'token': localStorage.getItem('token')
+      })
+    };
 
-
-  addChain(data) {
-    const url = `http://localhost:3000/mechademy/blockchain`
-    return this.http.post<any>(url, data,this.httpOptions)
+    return httpOptions;
   }
-  getChain(userName) {
-    console.log(this.httpOptions);
-    
+
+
+  addChain(data : any) {
+    const h = this.createHeader();
+    const url = `http://localhost:3000/mechademy/blockchain`;
+      console.log(data);
+      
+    return this.http.post<any>(url, data,h)
+  }
+  getChain(userName: string) {
+    console.log(this.httpOptions, 'http options');
     const url = `http://localhost:3000/mechademy/blockchain/username/${userName}`
-    return this.http.get<any>(url,this.httpOptions)
+    console.log(url, 'url');
+    return this.http.get<any>(url,this.createHeader());
   }
 }

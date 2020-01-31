@@ -9,8 +9,8 @@ import { Router } from '@angular/router'
   styleUrls: ['./chain.component.css']
 })
 export class ChainComponent implements OnInit {
-  chainData
-  user
+  chainData : any;
+  user: any;
   constructor(private _auth: AuthService,
     private _router: Router) { }
 
@@ -20,7 +20,7 @@ export class ChainComponent implements OnInit {
 
   addBlock () {
    var userName=this._auth.getUserName();
-  var block={
+  var block : any ={
     userName:userName,
     data:this.chainData
   }
@@ -29,11 +29,11 @@ export class ChainComponent implements OnInit {
     this._auth.addChain(block)
     .subscribe(
       res => {
-        
+        console.log(res,'res');
         this._router.navigate(['/blockSuccess'])
       },
       err => {
-        this._router.navigate(['/register'])}
+        this._router.navigate(['/error'])}
     ) 
   }
 

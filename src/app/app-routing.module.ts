@@ -6,11 +6,12 @@ import { AuthGuard } from './auth.guard';
 import { ChainComponent } from './chain/chain.component';
 import { BlockSuccessComponent } from './block-success/block-success.component';
 import { ViewChainComponent } from './view-chain/view-chain.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/register',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
@@ -32,7 +33,11 @@ const routes: Routes = [
   {
     path:'viewChain',
     component:ViewChainComponent
-  }
+  },
+  {
+    path:'error',
+    component:ErrorComponent
+  },
 ];
 
 @NgModule({

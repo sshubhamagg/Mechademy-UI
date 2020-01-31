@@ -13,6 +13,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import { ChainComponent } from './chain/chain.component';
 import { BlockSuccessComponent } from './block-success/block-success.component';
 import { ViewChainComponent } from './view-chain/view-chain.component';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ViewChainComponent } from './view-chain/view-chain.component';
     RegisterComponent,
     ChainComponent,
     BlockSuccessComponent,
-    ViewChainComponent
+    ViewChainComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

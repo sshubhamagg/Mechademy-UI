@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router'
 import { tokenKey } from '@angular/core/src/view';
+import { initDomAdapter } from '@angular/platform-browser/src/browser';
 
 
 @Component({
@@ -10,19 +11,25 @@ import { tokenKey } from '@angular/core/src/view';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  userName: string = null;
+  password: string = null;
   loginUserData = {}
 
   constructor(private _auth: AuthService,
               private _router: Router) { }
 
   ngOnInit() {
+    this.init();
+  }
+
+  init() {
+    localStorage.clear();
   }
 
   loginUser () {
+    console.log(this.userName, this.password,'shubham')
 
-   
-    this._auth.loginUser(this.loginUserData)
+    this._auth.loginUser(this.userName, this.password)
     .subscribe(
       res => {
         localStorage.setItem('token',res.token)
@@ -32,7 +39,7 @@ export class LoginComponent implements OnInit {
         this._router.navigate(['/blockSuccess'])
       },
       err => {
-        this._router.navigate(['/register'])}
+        this._router.navigate(['/error'])}
     ) 
   }
 
