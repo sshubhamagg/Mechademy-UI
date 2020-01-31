@@ -13,7 +13,7 @@ import { initDomAdapter } from '@angular/platform-browser/src/browser';
 export class LoginComponent implements OnInit {
   userName: string = null;
   password: string = null;
-  loginUserData = {}
+  loginUserData :any;
 
   constructor(private _auth: AuthService,
               private _router: Router) { }
