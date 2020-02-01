@@ -9,7 +9,7 @@ import { Router } from '@angular/router'
 })
 export class BlockSuccessComponent implements OnInit {
 
-  user
+  user:string;
   constructor(private _auth: AuthService,
     private _router: Router) { }
 

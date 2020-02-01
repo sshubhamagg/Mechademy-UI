@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router'
-import { tokenKey } from '@angular/core/src/view';
-import { initDomAdapter } from '@angular/platform-browser/src/browser';
+
+
 
 
 @Component({
@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
   userName: string = null;
   password: string = null;
   loginUserData :any;
+  isError:boolean;
+  errorMessage:string;
 
   constructor(private _auth: AuthService,
               private _router: Router) { }
@@ -27,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser () {
-    console.log(this.userName, this.password,'shubham')
+    
 
     this._auth.loginUser(this.userName, this.password)
     .subscribe(
@@ -39,7 +41,11 @@ export class LoginComponent implements OnInit {
         this._router.navigate(['/blockSuccess'])
       },
       err => {
-        this._router.navigate(['/error'])}
+        console.log(err);
+        
+        this.isError=true;
+        this.errorMessage=err.error.error.error ;
+        this._router.navigate(['/login'])}
     ) 
   }
 

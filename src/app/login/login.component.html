@@ -1,15 +1,13 @@
-<div class="py-5">
-  <div class="row">
-    <div class="col-md-6 mx-auto">
-      <span class="anchor" id="formLogin"></span>
 
-      <!-- form card login -->
-      <div class="card rounded-0">
-        <div class="card-header">
-          <h3 class="mb-0">Login</h3>
-        </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
         <div class="card-body">
-          <form class="form">
+          <h5 class="card-title text-center">Sign In</h5>
+        
+          <form class="form-signin">
             <div class="form-group">
               <label for="uname1">Username</label>
               <input type="text" class="form-control rounded-0" [(ngModel)]="userName" name="userName" required>
@@ -18,15 +16,15 @@
               <label>Password</label>
               <input type="password" class="form-control rounded-0" [(ngModel)]="password" name="password" required>
             </div>
-            <button type="button" (click)="loginUser()" class="btn btn-success float-right">Login</button>
-          </form>
+
+           
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="loginUser()" type="submit">Sign in</button>
+            <p>Not Registered? <a routerLink="/register">Create an account!</a> </p>
+            <div class="error" *ngIf="isError">{{errorMessage}}</div>
+            <hr class="my-4">
+           </form>
         </div>
-        <!--/card-block-->
       </div>
-      <!-- /form card login -->
-
     </div>
-
-
   </div>
 </div>

@@ -1,23 +1,31 @@
-<div><h3>Hi {{user}}</h3>
+<div class="container-fluid" style="background: #f2f2f2;">
+<section class="success py-5">
+    <h3>Hi {{user}}</h3>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card mb-5 mb-lg-0">
+          <div class="card-body">
+            <h5 class="card-title">Add more blocks</h5>
+            <p class="card-text">Do you want to add more blocks to your Blockchain??</p>
+            <button type="button" (click)="addBlock()"  class="btn btn-primary">ADD BLOCKS</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="card mb-5 mb-lg-0">
+          <div class="card-body">
+            <h5 class="card-title">View Blockchain</h5>
+            <p class="card-text">Do you want to view your Blockchain??</p>
+            <button type="button" (click)="viewChain()"  class="btn btn-primary">VIEW BLOCKCHAIN</button>
+          </div>
+        </div>
+      </div>
+     
 
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Add more blocks</h5>
-          <p class="card-text">Do you want to add more blocks to your Blockchain??</p>
-          <button type="button" (click)="addBlock()"  class="btn btn-primary">ADD BLOCKS</button>
-        </div>
-      </div>
+</div>
     </div>
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">View Blockchain</h5>
-          <p class="card-text">Do you want to view your Blockchain??</p>
-          <button type="button" (click)="viewChain()"  class="btn btn-primary">VIEW BLOCKCHAIN</button>
-          
-        </div>
-      </div>
-    </div>
-  </div>
+</section>
+</div>

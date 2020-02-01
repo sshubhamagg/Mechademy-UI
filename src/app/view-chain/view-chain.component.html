@@ -1,28 +1,28 @@
-
 <div class="container-fluid" style="background: #f2f2f2;">
-  <div class="container">
-    <div class="row" *ngFor="let block of blocks">
-      <div class="col-md-9 col-sm-9 col-lg-9 col-xl-9 mx-auto my-3" >
-        <div class="card" style="background: #fff; padding: 10px;">
-          <img  src="../../assets/images/icon_card_top.png" alt="Card image cap" height="60" width="60" >
-          <div class="card-body">
-            <h5 class="card-title"><span style=" margin-left: 7px; font-size: medium; background-color: white;">DATA</span> <input type="text" value="{{block.data}}" readonly></h5>
-            <div class="card-text">
-              Previous Hash: {{block.previousHash}}<br>
-              <p class="hash"> Block Hash: {{block.hash}} </p>
-  
-            </div>
+<section class="block py-5">
+    <div class="container">
+      <h4>{{user}} Your BlockChain!</h4>
+        <div class="row" *ngFor="let block of blocks">
+          <div class="col-md-9 col-sm-9 col-lg-9 col-xl-9 mx-auto my-3" >
+            <div class="card" style="background: #fff; padding: 10px;">
+            
+              <div class="card-body">
+                  <img  src="../../assets/images/icon_card_top.png" alt="Card image cap" height="60" width="60" >&nbsp;&nbsp; &nbsp;&nbsp; DATA: {{block.data}}                <div class="card-text">
+                  Previous Hash: {{block.previousHash}}<br>
+                  <p class="hash"> Block Hash: {{block.hash}} </p>
+      
+                </div>
+              </div>
+            </div>  
+            <div class="image-arrow">
+              <img  src="../../assets/images/down_arrow_icon.png" height="60" width="60" alt="Block link">
           </div>
-        </div>  
-        <div class="image-arrow">
-          <img  src="../../assets/images/down_arrow_icon.png" height="60" width="60" alt="Block link">
+          </div>
+        </div>
+        
       </div>
-      </div>
-    </div>
-    
-  </div>
+  </section>
   <div>
-    <app-chain></app-chain>
-  </div>
-  
+      <app-chain></app-chain>
+    </div>
 </div>

@@ -17,6 +17,7 @@ import {ChainComponent} from '../chain/chain.component';
 export class ViewChainComponent implements OnInit {
    userName: string;
    blocks: any = '';
+   user:string;
   constructor(private _auth: AuthService,
     private _router: Router) { }
 
@@ -25,19 +26,17 @@ export class ViewChainComponent implements OnInit {
 }
 
   init() {
+    this.user=this._auth.getFirstName();
     this.userName=this._auth.getUserName();
-    console.log(this.userName,'this.username');
+ 
     
      this._auth.getChain(this.userName)
      .subscribe(
        res => {
-        console.log('res',res);
        this.blocks=res.data.chain;
-        //  this._router.navigate(['/login'])
+      
        },
-       err => {
-         console.log(err,'err');
-         
+       err => {   
          this._router.navigate(['/error'])}
      ) 
   }

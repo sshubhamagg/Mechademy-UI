@@ -8,26 +8,39 @@ import { Router } from '@angular/router'
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  firstName: string;
+  lastName: string;
+  userName: string;
+  password: string;
+  registerUserData: any;
+  isError: boolean;
+  errorMessage: string;
 
-  registerUserData :any;
   constructor(private _auth: AuthService,
-              private _router: Router) { }
+    private _router: Router) { }
 
   ngOnInit() {
   }
 
   registerUser() {
+    this.registerUserData = {
+      firstName: this.firstName,
+      lastName: this.lastName,
+      userName: this.userName,
+      password: this.password
+    }
+
     this._auth.registerUser(this.registerUserData)
-    .subscribe(
-      res => {
-        console.log(res);
-        
-    //   localStorage.setItem('token', res.token)
-        this._router.navigate(['/login'])
-      },
-      err => console.log(err)
-    )      
+      .subscribe(
+        res => {
+          this._router.navigate(['/login'])
+        },
+        err => {
+          console.log(err.error.error);
+          
+          this.isError = true;
+          this.errorMessage = err.error.error;
+        }
+      )
   }
-
-
 }

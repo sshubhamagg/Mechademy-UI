@@ -1,51 +1,44 @@
-
-
-* {
-    box-sizing: border-box;
+h5{
+  margin-top: 15px;
+  }
+  .block .card {
+    border: none;
+    border-radius: 1rem;
+    transition: all 0.2s;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
   }
   
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  .column {
-    float: left;
-    width: 25%;
-    padding: 0 10px;
+  .card{
+    width:90%;
+    margin-right: auto;
+    margin-left: auto;
   }
   
-
-  .row {margin: 0 -5px;}
-  
-
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  .block .card-title {
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+  }
+  .block .btn {
+    font-size: 80%;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    opacity: 0.7;
+    transition: all 0.2s;
   }
   
-
-  .card-text{
-    font-size: 14px;
-}
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
-    padding: 16px;
-    text-align: center;
-    background-color: #f1f1f1;
-    
-  }
-
-  .card:hover {
-    transform: translateY(-15px) scale(1.025)
-  }
   
-  /* Responsive columns - one column layout (vertical) on small screens */
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
+  @media (min-width: 992px) {
+    .block .card:hover {
+      margin-top: -.25rem;
+      margin-bottom: .25rem;
+      box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+    }
+    .block .card:hover .btn {
+      opacity: 1;
     }
   }
 
