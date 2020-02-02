@@ -51,3 +51,6 @@ If the installation was successful, you should be able to run the following comm
 ## Running the project
 
     $ npm start
+
+## Click here to view app!
+    $ https://mechademy-angular.herokuapp.com/
