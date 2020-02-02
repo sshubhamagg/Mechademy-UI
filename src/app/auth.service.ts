@@ -16,12 +16,12 @@ export class AuthService {
               private _router: Router) { }
 
   registerUser(user) {
-    const url=`http://localhost:3000/mechademy/signUp`
+    const url=`https://rocky-dawn-04813.herokuapp.com/mechademy/signUp`
     return this.http.post<any>(url, user)
   }
 
   loginUser(userName: string , password : string) {
-    const url=`http://localhost:3000/mechademy/login/userName/${userName}/password/${password}`
+    const url=`https://rocky-dawn-04813.herokuapp.com/mechademy/login/userName/${userName}/password/${password}`
     console.log(url,'test 2');
     
     return this.http.get<any>(url)
@@ -58,14 +58,14 @@ export class AuthService {
 
   addChain(data : any) {
     const h = this.createHeader();
-    const url = `http://localhost:3000/mechademy/blockchain`;
+    const url = `https://rocky-dawn-04813.herokuapp.com/mechademy/blockchain`;
       console.log(data);
       
     return this.http.post<any>(url, data,h)
   }
   getChain(userName: string) {
     console.log(this.httpOptions, 'http options');
-    const url = `http://localhost:3000/mechademy/blockchain/username/${userName}`
+    const url = `https://rocky-dawn-04813.herokuapp.com/blockchain/username/${userName}`
     console.log(url, 'url');
     return this.http.get<any>(url,this.createHeader());
   }
