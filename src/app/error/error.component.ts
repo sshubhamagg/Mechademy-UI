@@ -16,7 +16,6 @@ export class ErrorComponent implements OnInit {
   }
 
   onLogin() {
-    console.log('i was here');
     this._router.navigate(['/login']);
   }
 

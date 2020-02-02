@@ -24,12 +24,9 @@ export class ChainComponent implements OnInit {
     userName:userName,
     data:this.chainData
   }
-  console.log('block',block);
-  
     this._auth.addChain(block)
     .subscribe(
       res => {
-        console.log(res,'res');
         this._router.navigate(['/blockSuccess'])
       },
       err => {

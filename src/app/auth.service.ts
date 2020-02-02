@@ -22,9 +22,7 @@ export class AuthService {
 
   loginUser(userName: string , password : string) {
     const url=`https://rocky-dawn-04813.herokuapp.com/mechademy/login/userName/${userName}/password/${password}`
-    console.log(url,'test 2');
-    
-    return this.http.get<any>(url)
+      return this.http.get<any>(url)
   }
 
   logoutUser() {
@@ -59,14 +57,12 @@ export class AuthService {
   addChain(data : any) {
     const h = this.createHeader();
     const url = `https://rocky-dawn-04813.herokuapp.com/mechademy/blockchain`;
-      console.log(data);
+
       
     return this.http.post<any>(url, data,h)
   }
   getChain(userName: string) {
-    console.log(this.httpOptions, 'http options');
-    const url = `https://rocky-dawn-04813.herokuapp.com/blockchain/username/${userName}`
-    console.log(url, 'url');
+    const url = `https://rocky-dawn-04813.herokuapp.com/mechademy/blockchain/username/${userName}`
     return this.http.get<any>(url,this.createHeader());
   }
 }

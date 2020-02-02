@@ -41,8 +41,7 @@ export class LoginComponent implements OnInit {
         this._router.navigate(['/blockSuccess'])
       },
       err => {
-        console.log(err);
-        
+      
         this.isError=true;
         this.errorMessage=err.error.error.error ;
         this._router.navigate(['/login'])}
